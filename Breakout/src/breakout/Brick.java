@@ -9,6 +9,7 @@ import utilities.GDV5;
 public class Brick extends Rectangle{
 	public Color c;
 	private boolean on = true;
+	public boolean powerup = false;
 	static Color[] colors = new Color[]{Color.red,Color.blue};
 	public Brick(int x,int y, Color c, int row) {
 		super(x,y,((GDV5.getMaxWindowX()-70-(10*(row-1)))/row),15);
@@ -34,6 +35,19 @@ public class Brick extends Rectangle{
 				}else {
 					bricks[j][i] = new Brick(x,y,colors[1],l);
 				}
+				
+				int pu = (int)(Math.random()*20);
+				
+				if(pu == 7) {
+					bricks[j][i].c=Color.green;
+				}
+				if(pu == 8) {
+					bricks[j][i].c=Color.orange;
+				}
+				if(pu == 9 && j == r-1) {
+					bricks[j][i].c=Color.white;
+				}
+				
 				
 				x+= bricks[0][0].width+padding;
 			}

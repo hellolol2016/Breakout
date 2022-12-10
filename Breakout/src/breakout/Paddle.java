@@ -22,11 +22,11 @@ private int down;
 		}	
 	}
 	public void bot() {
-		if(this.getCenterY()<Breakout.ball.getCenterY()) {
-			this.setLocation((int)this.getX(),(int)this.getY()+6);
+		if(this.getCenterX()<Breakout.ball.getCenterX()) {
+			this.setLocation((int)Breakout.ball.getX(),(int)this.getY());
 		}
-		if(this.getCenterY()>Breakout.ball.getCenterY()) {
-			this.setLocation((int)this.getX(),(int)this.getY()-6);
+		if(this.getCenterX()>Breakout.ball.getCenterX() ) {
+			this.setLocation((int)Breakout.ball.getX(),(int)this.getY());
 		}
 		
 	}
